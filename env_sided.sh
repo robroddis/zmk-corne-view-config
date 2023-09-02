@@ -1,0 +1,5 @@
+export zephyr_version='3.2.0'
+export extra_cmake_args='-DSHIELD="corne_${shield_side} nice_view_adapter nice_view"'
+export display_name='corne_${shield_side} nice_view_adapter nice_view - nice_nano_v2'
+export artifact_name='corne_${shield_side} nice_view_adapter nice_view-nice_nano_v2-zmk'
+export cache_name='cache-zephyr-3.2.0-modules'
