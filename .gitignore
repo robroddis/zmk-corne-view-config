@@ -1,7 +1,6 @@
 .ccache/
 .cmake/
 .west/
-artifacts/
 build/
 modules/
 zephyr/
