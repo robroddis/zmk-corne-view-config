@@ -131,7 +131,7 @@
             bindings = <
                 &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON      &kp DEL        &kp HOME          &kp PGDN               &kp PGUP          &kp END             &none
                 &none      &kp LBRC            &kp LPAR      &kp RPAR       &kp RBRC       &kp PIPE       &kp GRAVE      &kp LEFT          &kp DOWN               &kp UP            &kp RIGHT           &none
-                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI       &kp TILDE      &kp C_VOL_DN      &kp C_MUTE             &kp C_VOL_UP      &cm RSHFT NUBS      &none
+                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI       &kp TILDE      &kp C_VOL_DN      &kp C_MUTE             &kp C_VOL_UP      &cm RSHFT BSLH      &none
                                                              &kp LALT       &kp LCTRL      &kp SPACE      &none          &none             &td_multi_windows      
             >;
         };
@@ -167,7 +167,7 @@
             bindings = <
                 &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON           &kp DEL        &kp HOME          &kp PGDN           &kp PGUP          &kp END             &none
                 &none      &kp LBRC            &kp LPAR      &kp RPAR       &kp RBRC       &kp PIPE            &kp GRAVE      &kp LEFT          &kp DOWN           &kp UP            &kp RIGHT           &none
-                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI            &kp TILDE      &kp C_VOL_DN      &kp C_MUTE         &kp C_VOL_UP      &cm RSHFT NUBS      &none
+                &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI            &kp TILDE      &kp C_VOL_DN      &kp C_MUTE         &kp C_VOL_UP      &cm RSHFT BSLH      &none
                                                              &kp LCTRL      &kp LALT       &sm LGUI SPACE      &none          &none             &td_multi_mac      
             >;
         };
