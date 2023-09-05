@@ -22,12 +22,12 @@
     combos {
         compatible = "zmk,combos";
         
-        combo_esc {
-          timeout-ms = <20>;
-          key-positions = <19 20>;
-          bindings = <&kp ESC>;
-          layers = <WIN MAC>;
-        };
+    //    combo_esc {
+    //      timeout-ms = <20>;
+    //      key-positions = <19 20>;
+    //      bindings = <&kp ESC>;
+    //      layers = <WIN MAC>;
+    //    };
 
         //combo_tab {
         //  timeout-ms = <20>;
