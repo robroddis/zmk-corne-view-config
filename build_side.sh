@@ -3,7 +3,7 @@ export HOME=/work/home
 mkdir -p ${HOME}
 rm -rf build
 west init -l "config"
-west update
+# west update
 west zephyr-export
 west build -s zmk/app -b "nice_nano_v2" -- -DZMK_CONFIG="${PWD}/config" -DSHIELD="corne_${shield_side} nice_view_adapter nice_view"
 mkdir -p artifacts
