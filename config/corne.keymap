@@ -143,7 +143,7 @@
         windows_default_layer {
             bindings = <
                 &none      &kp Q            &kp W      &kp E          &kp R          &kp T          &kp Y                 &kp U                  &kp I                  &kp O        &kp P               &none
-                &none      &kp A            &kp S      &kp D          &kp F          &kp G          &kp H                 &kp J                  &kp K                  &kp L        &kp GRAVE           &none
+                &none      &kp A            &kp S      &kp D          &kp F          &kp G          &kp H                 &kp J                  &kp K                  &kp L        &kp BSPC            &none
                 &none      &bm LSHFT Z      &kp X      &kp C          &kp V          &kp B          &kp N                 &kp M                  &kp COMMA              &kp DOT      &bm RSHFT FSLH      &none
                                                        &kp LALT       &kp LCTRL      &kp SPACE      &lt WIN_CODE TAB      &lt WIN_NUM ENTER      &td_multi_windows
             >;
@@ -151,7 +151,7 @@
 
         windows_code_layer {
             bindings = <
-                &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON      &kp HOME       &kp PGDN          &kp PGUP               &kp END           &kp BSPC            &none
+                &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON      &kp HOME       &kp PGDN          &kp PGUP               &kp END           &kp GRAVE           &none
                 &none      &kp LBRC            &kp LPAR      &kp RPAR       &kp RBRC       &kp PIPE2      &kp LEFT       &kp DOWN          &kp UP                 &kp RIGHT         &kp DEL             &none
                 &none      &cm LSHFT LBKT      &kp APOS      &kp LS(N2)     &kp RBKT       &kp SEMI       &kp TILDE2     &kp C_VOL_DN      &kp C_MUTE             &kp C_VOL_UP      &cm RSHFT NUBS      &none
                                                              &kp LALT       &kp LCTRL      &kp SPACE      &none          &none             &td_multi_windows      
@@ -160,7 +160,7 @@
 
         windows_number_layer {
             bindings = < 
-                &none      &kp EXCL       &kp DQT     &kp NUHS       &kp DLLR       &kp PRCNT        &kp CARET      &kp AMPS      &kp ASTERISK           &caps_word    &kp BSPC       &none  
+                &none      &kp EXCL       &kp DQT     &kp NUHS       &kp DLLR       &kp PRCNT        &kp CARET      &kp AMPS      &kp ASTERISK           &caps_word    &none          &none  
                 &none      &kp N1         &kp N2      &kp N3         &kp N4         &kp N5           &kp N6         &kp N7        &kp N8                 &kp N9        &kp N0         &none
                 &none      &kp LSHFT      &none       &none          &none          &mo WIN_FUNC     &none          &none         &kp COMMA              &kp DOT       &kp RSHFT      &none
                                                       &kp LALT       &kp LCTRL      &kp SPACE        &none          &none         &td_multi_windows      
@@ -179,7 +179,7 @@
         mac_default_layer {
             bindings = <
                 &none      &kp Q            &kp W      &kp E          &kp R         &kp T               &kp Y                 &kp U                  &kp I         &kp O        &kp P               &none
-                &none      &kp A            &kp S      &kp D          &kp F         &kp G               &kp H                 &kp J                  &kp K         &kp L        &kp GRAVE           &none
+                &none      &kp A            &kp S      &kp D          &kp F         &kp G               &kp H                 &kp J                  &kp K         &kp L        &kp BSPC            &none
                 &none      &bm LSHFT Z      &kp X      &kp C          &kp V         &kp B               &kp N                 &kp M                  &kp COMMA     &kp DOT      &bm RSHFT FSLH      &none
                                                        &kp LALT       &kp LCTRL     &sm LGUI SPACE      &lt MAC_CODE TAB      &lt MAC_NUM ENTER      &td_multi_mac       
             >;
@@ -187,7 +187,7 @@
 
         mac_code_layer {
             bindings = <
-                &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON           &kp HOME       &kp PGDN          &kp PGUP           &kp END           &kp BSPC            &none
+                &none      &kp UNDER           &kp MINUS     &kp PLUS       &kp EQUAL      &kp COLON           &kp HOME       &kp PGDN          &kp PGUP           &kp END           &kp GRAVE           &none
                 &none      &kp LBRC            &kp LPAR      &kp RPAR       &kp RBRC       &kp PIPE            &kp LEFT       &kp DOWN          &kp UP             &kp RIGHT         &kp DEL             &none
                 &none      &cm LSHFT LBKT      &kp APOS      &kp DQT        &kp RBKT       &kp SEMI            &kp TILDE      &kp C_VOL_DN      &kp C_MUTE         &kp C_VOL_UP      &cm RSHFT BSLH      &none
                                                              &kp LALT       &kp LCTRL      &sm LGUI SPACE      &none          &none             &td_multi_mac      
@@ -196,7 +196,7 @@
 
         mac_number_layer {
             bindings = < 
-                &none      &kp EXCL       &kp AT      &kp NUHS       &kp DLLR      &kp PRCNT           &kp CARET      &kp AMPS      &kp ASTERISK       &caps_word    &kp BSPC       &none
+                &none      &kp EXCL       &kp AT      &kp NUHS       &kp DLLR      &kp PRCNT           &kp CARET      &kp AMPS      &kp ASTERISK       &caps_word    &none          &none
                 &none      &kp N1         &kp N2      &kp N3         &kp N4        &kp N5              &kp N6         &kp N7        &kp N8             &kp N9        &kp N0         &none
                 &none      &kp LSHFT      &none       &none          &none         &mo MAC_FUNC        &none          &none         &kp COMMA          &kp DOT       &kp RSHFT      &none
                                                       &kp LALT       &kp LCTRL     &sm LGUI SPACE      &none          &none         &td_multi_mac      
