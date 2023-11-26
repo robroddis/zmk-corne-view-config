@@ -63,6 +63,16 @@
             keep-mods = <(MOD_LSFT)>;
         };
 
+        ss_cw: sticky_capsword {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STICKY_CAPSWORD";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
+
         lst: lshift_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LSHIFT_TAP";
@@ -85,10 +95,10 @@
             hold-trigger-key-positions = <2 1 14 25 13 26 4 15 27 16 3 28 29 5 17 36 37 38>;
         };
 
-        smo: sticky_mo {
+        scmo: ss_cw_mo {
             compatible = "zmk,behavior-hold-tap";
-            label = "STICKY_MO";
-            bindings = <&mo>, <&sk>;
+            label = "SS_CW_MO";
+            bindings = <&mo>, <&ss_cw>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -134,7 +144,7 @@
 &trans  &kp Q        &kp W            &kp E         &kp R         &kp T            &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G            &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X            &kp C         &kp V         &kp B            &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &caps_word    &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &smo 2 LSHFT  &kp ENTER
+                                      &caps_word    &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &scmo 2 0     &kp ENTER
             >;
         };
 
@@ -170,7 +180,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R            &kp T             &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F     &kp G             &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V            &kp B             &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &caps_word    &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &smo 6 LSHFT  &kp ENTER
+                                  &caps_word    &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &scmo 6 0     &kp ENTER
             >;
         };
 
