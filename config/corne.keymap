@@ -85,6 +85,16 @@
             hold-trigger-key-positions = <2 1 14 25 13 26 4 15 27 16 3 28 29 5 17 36 37 38>;
         };
 
+        smo: sticky_mo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_MO";
+            bindings = <&mo>, <&sk>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -124,7 +134,7 @@
 &trans  &kp Q        &kp W            &kp E         &kp R         &kp T            &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G            &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X            &kp C         &kp V         &kp B            &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &caps_word    &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &mo 2         &kp ENTER
+                                      &caps_word    &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &smo 2 LSHFT  &kp ENTER
             >;
         };
 
@@ -160,7 +170,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R            &kp T             &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F     &kp G             &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V            &kp B             &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &caps_word    &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &mo 6         &kp ENTER
+                                  &caps_word    &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &smo 6 LSHFT  &kp ENTER
             >;
         };
 
