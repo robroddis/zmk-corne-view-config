@@ -4,6 +4,15 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+
+/* Global settings */
+// #define QUICK_TAP_MS 175
+
+&sk {  // sticky-key config
+    release-after-ms = <900>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -144,7 +153,7 @@
 &trans  &kp Q        &kp W            &kp E         &kp R         &kp T            &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G            &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X            &kp C         &kp V         &kp B            &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &caps_word    &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &scmo 2 0     &kp ENTER
+                                      &kp K_CANCEL  &bspc_del     &sm LCTRL SPACE  &lt 1 TAB  &scmo 2 0     &kp ENTER
             >;
         };
 
@@ -180,7 +189,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R            &kp T             &kp Y      &kp U         &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F     &kp G             &kp H      &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V            &kp B             &kp N      &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &caps_word    &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &scmo 6 0     &kp ENTER
+                                  &kp K_CANCEL  &bspc_del        &sm LGUI SPACE    &lt 5 TAB  &scmo 6 0     &kp ENTER
             >;
         };
 
