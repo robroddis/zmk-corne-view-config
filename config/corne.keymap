@@ -12,6 +12,15 @@
     quick-release;             // no double capitalization when rolling keys
 };
 
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
+};
+
+&num_word {  // num-word, requires PR #1451
+    layers = <2>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -171,6 +180,44 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+
+        // tap: num-word | double-tap: sticky num-layer | hold: num-layer
+        smart_numw: smart_numw {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SMART_NUMW";
+            bindings = <&mo>, <&num_dancew>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+        };
+
+        num_dancew: num_dancew {
+            compatible = "zmk,behaviour-tap-dance";
+            label = "NUM_DANCEW";
+            tapping-term-ms = <200>;
+            bindings = <&sl 2>, <&num_word>;
+        };
+
+        // tap: num-word | double-tap: sticky num-layer | hold: num-layer
+        smart_numm: smart_numm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SMART_NUMM";
+            bindings = <&mo>, <&num_dancem>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+        };
+
+        num_dancem: num_dancem {
+            compatible = "zmk,behaviour-tap-dance";
+            label = "NUM_DANCEM";
+            tapping-term-ms = <200>;
+            bindings = <&sl 6>, <&num_word>;
+        };
     };
 
     keymap {
@@ -178,10 +225,10 @@
 
         win_base {
             bindings = <
-&trans  &kp Q        &kp W            &kp E         &kp R         &kp T              &kp Y        &kp U         &kp I         &kp O            &kp P           &trans
-&trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G              &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X            &kp C         &kp V         &kp B              &kp N        &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &bspc_del     &mo 1         &sm LCTRL SPACE    &smart_shft  &mo 2         &kp ENTER
+&trans  &kp Q        &kp W            &kp E         &kp R         &kp T              &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
+&trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G              &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X            &kp C         &kp V         &kp B              &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
+                                      &bspc_del     &mo 1         &sm LCTRL SPACE    &smart_shft  &smart_numw 2 0  &kp ENTER
             >;
 
             label = "Win";
@@ -222,10 +269,10 @@
 
         mac_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T             &kp Y        &kp U         &kp I         &kp O            &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G             &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B             &kp N        &kp M         &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &bspc_del     &mo 5         &sm LGUI SPACE    &smart_shft  &mo 6         &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R         &kp T             &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G             &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V         &kp B             &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
+                                  &bspc_del     &mo 5         &sm LGUI SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
             >;
 
             label = "Mac";
