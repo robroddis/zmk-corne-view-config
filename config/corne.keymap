@@ -20,10 +20,6 @@
     /delete-property/ ignore-modifiers;
 };
 
-&num_word {  // num-word, requires PR #1451
-    layers = <2>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
-};
 
 / {
     combos {
@@ -32,14 +28,12 @@
         esc_combo {
             bindings = <&kp ESC>;
             key-positions = <7 8>;
-            layers = <0 4>;
             require-prior-idle-ms = <150>;
         };
 
         cancel {
             bindings = <&kp K_CANCEL>;
             key-positions = <3 4>;
-            layers = <0 4>;
             require-prior-idle-ms = <150>;
         };
 
@@ -189,7 +183,7 @@
         smart_numw: smart_numw {
             compatible = "zmk,behavior-hold-tap";
             label = "SMART_NUMW";
-            bindings = <&mo>, <&num_word>;
+            bindings = <&mo>, <&num_dancew>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -198,10 +192,20 @@
         };
 
         num_dancew: num_dancew {
-            compatible = "zmk,behaviour-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             label = "NUM_DANCEW";
             tapping-term-ms = <200>;
-            bindings = <&num_word>, <&sl 2>;
+            #binding-cells = <0>;
+            bindings = <&sl 2>, <&num_wordw>;
+        };
+
+        num_wordw: num_wordw {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUM_WORDW";
+            #binding-cells = <0>;
+            layers = <2>;
+            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+            ignore-numbers;
         };
 
         // tap: num-word | double-tap: sticky num-layer | hold: num-layer
@@ -217,10 +221,20 @@
         };
 
         num_dancem: num_dancem {
-            compatible = "zmk,behaviour-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             label = "NUM_DANCEM";
             tapping-term-ms = <200>;
-            bindings = <&sl 6>, <&num_word>;
+            #binding-cells = <0>;
+            bindings = <&sl 6>, <&num_wordm>;
+        };
+
+        num_wordm: num_wordm {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUM_WORDM";
+            #binding-cells = <0>;
+            layers = <6>;
+            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+            ignore-numbers;
         };
     };
 
@@ -251,10 +265,10 @@
 
         win_num {
             bindings = <
-&trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
-&trans  &kp N1    &kp N2     &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8        &kp N9    &kp N0    &trans
-&trans  &kp SQT   &kp MINUS  &kp PLUS  &kp FSLH  &kp NUBS     &trans     &trans    &trans        &trans    &trans    &trans
-                             &trans    &trans    &trans       &trans     &trans    &trans
+&trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR  &kp PRCNT    &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
+&trans  &kp N1    &kp N2     &kp N3    &kp N4    &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0    &trans
+&trans  &kp SQT   &kp MINUS  &kp PLUS  &kp FSLH  &kp NUBS     &kp K_CANCEL  &trans    &trans        &trans    &trans    &trans
+                             &trans    &trans    &trans       &trans        &trans    &trans
             >;
 
             label = "1 2 3";
@@ -276,7 +290,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R         &kp T             &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G             &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V         &kp B             &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &bspc_del     &mo 5         &sm LGUI SPACE    &smart_shft  &mo 6            &kp ENTER
+                                  &bspc_del     &mo 5         &sm LGUI SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
             >;
 
             label = "Mac";
@@ -295,10 +309,10 @@
 
         mac_num {
             bindings = <
-&trans  &kp EXCL  &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
-&trans  &kp N1    &kp N2      &kp N3      &kp N4      &kp N5         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans
-&trans  &kp SQT   &kp MINUS   &kp PLUS    &kp FSLH    &kp BSLH       &trans     &trans    &trans     &trans    &trans    &trans
-                              &trans      &trans      &trans         &trans     &trans    &trans
+&trans  &kp EXCL  &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&trans  &kp N1    &kp N2      &kp N3      &kp N4      &kp N5         &kp N6        &kp N7    &kp N8     &kp N9    &kp N0    &trans
+&trans  &kp SQT   &kp MINUS   &kp PLUS    &kp FSLH    &kp BSLH       &kp K_CANCEL  &trans    &trans     &trans    &trans    &trans
+                              &trans      &trans      &trans         &trans        &trans    &trans
             >;
 
             label = "0 1 2";
