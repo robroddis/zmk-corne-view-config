@@ -37,14 +37,14 @@
         };
 
         db_combo {
-            bindings = <&bspc_del>;
-            key-positions = <31 32>;
+            bindings = <&hmr_bspc RS(RCTRL) 0>;
+            key-positions = <19 20>;
             require-prior-idle-ms = <150>;
         };
 
         tab_combo {
-            bindings = <&kp TAB>;
-            key-positions = <27 28>;
+            bindings = <&hml LS(LCTRL) TAB>;
+            key-positions = <15 16>;
             require-prior-idle-ms = <150>;
         };
     };
@@ -259,6 +259,21 @@
             continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
             ignore-numbers;
         };
+
+        hmr_bspc: hmr_bspc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_BSPC";
+            bindings = <&kp>, <&bspc_del>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "balanced";
+            retro-tap;
+            hold-trigger-key-positions = <39 40 41 1 2 3 4 5 13 14 15 16 17 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     keymap {
@@ -367,3 +382,4 @@
         };
     };
 };
+
