@@ -292,8 +292,8 @@
 
         win_nav {
             bindings = <
-&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE   &kp HOME   &kp PG_DN      &kp PG_UP    &kp END    &trans
-&trans  &kp LBRC  &kp LPAR    &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp UP       &kp RIGHT  &trans
+&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE   &kp HOME   &kp UP         &kp END      &kp PG_UP  &trans
+&trans  &kp LBRC  &kp LPAR    &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
 &trans  &kp LBKT  &kp MINUS   &kp PLUS  &kp RBKT         &kp AMPS     &kp TILDE2  &kp PIPE2  &kp LS(COMMA)  &kp LS(DOT)  &kp NUBS   &trans
                               &trans    &trans           &trans       &trans      &trans     &trans
             >;
@@ -336,8 +336,8 @@
 
         mac_nav {
             bindings = <
-&trans  &kp EXCL  &kp DQT    &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-&trans  &kp LBRC  &kp LPAR   &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &kp EXCL  &kp DQT    &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE  &kp HOME  &kp UP     &kp END    &kp PG_UP  &trans
+&trans  &kp LBRC  &kp LPAR   &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON  &kp LEFT  &kp DOWN   &kp RIGHT  &kp PG_DN  &trans
 &trans  &kp LBKT  &kp MINUS  &kp PLUS  &kp RBKT         &kp AMPS     &kp TILDE  &kp PIPE  &kp COMMA  &kp DOT    &kp BSLH   &trans
                              &trans    &trans           &trans       &trans     &trans    &trans
             >;
