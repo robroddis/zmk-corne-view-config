@@ -310,10 +310,10 @@
 
         win_nav {
             bindings = <
-&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE   &kp HOME   &kp UP         &kp END      &kp PG_UP  &trans
-&trans  &kp LBRC  &kp LPAR    &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
-&trans  &kp LBKT  &kp MINUS   &kp PLUS  &kp RBKT         &kp AMPS     &kp TILDE2  &kp PIPE2  &kp LS(COMMA)  &kp LS(DOT)  &kp NUBS   &trans
-                              &trans    &trans           &trans       &trans      &trans     &trans
+&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL &kp UNDER    &kp GRAVE   &kp HOME   &kp UP         &kp END      &kp PG_UP  &trans
+&trans  &kp LBRC  &kp LBKT    &kp RBKT  &kp RBRC  &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
+&trans  &trans    &kp MINUS   &kp PLUS  &trans    &kp AMPS     &kp TILDE2  &kp PIPE2  &kp LS(COMMA)  &kp LS(DOT)  &kp NUBS   &trans
+                              &trans    &trans    &trans       &trans      &trans     &trans
             >;
 
             label = "< $ym >";
@@ -323,7 +323,7 @@
             bindings = <
 &trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1    &kp N2     &kp N3    &kp N4     &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0    &trans
-&trans  &kp SQT   &kp MINUS  &kp PLUS  &kp FSLH   &kp NUBS     &kp K_CANCEL  &trans    &trans        &trans    &trans    &trans
+&trans  &kp SQT   &kp MINUS  &kp PLUS  &trans     &trans       &kp K_CANCEL  &trans    &trans        &trans    &trans    &trans
                              &trans    &clr_mo 1  &trans       &trans        &trans    &trans
             >;
 
@@ -354,10 +354,10 @@
 
         mac_nav {
             bindings = <
-&trans  &kp EXCL  &kp DQT    &kp SQT   &kp EQUAL        &kp UNDER    &kp GRAVE  &kp HOME  &kp UP     &kp END    &kp PG_UP  &trans
-&trans  &kp LBRC  &kp LPAR   &kp RPAR  &kp RIGHT_BRACE  &kp STAR     &kp COLON  &kp LEFT  &kp DOWN   &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp LBKT  &kp MINUS  &kp PLUS  &kp RBKT         &kp AMPS     &kp TILDE  &kp PIPE  &kp COMMA  &kp DOT    &kp BSLH   &trans
-                             &trans    &trans           &trans       &trans     &trans    &trans
+&trans  &kp EXCL  &kp DQT    &kp SQT   &kp EQUAL  &kp UNDER    &kp GRAVE  &kp HOME  &kp UP         &kp END      &kp PG_UP  &trans
+&trans  &kp LBRC  &kp LBKT   &kp RBKT  &kp RBRC   &kp STAR     &kp COLON  &kp LEFT  &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
+&trans  &trans    &kp MINUS  &kp PLUS  &trans     &kp AMPS     &kp TILDE  &kp PIPE  &kp LS(COMMA)  &kp LS(DOT)  &kp BSLH   &trans
+                             &trans    &trans     &trans       &trans     &trans    &trans
             >;
 
             label = "< Nav >";
@@ -367,7 +367,7 @@
             bindings = <
 &trans  &kp EXCL  &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1    &kp N2      &kp N3      &kp N4      &kp N5         &kp N6        &kp N7    &kp N8     &kp N9    &kp N0    &trans
-&trans  &kp SQT   &kp MINUS   &kp PLUS    &kp FSLH    &kp BSLH       &kp K_CANCEL  &trans    &trans     &trans    &trans    &trans
+&trans  &kp SQT   &kp MINUS   &kp PLUS    &trans      &trans         &kp K_CANCEL  &trans    &trans     &trans    &trans    &trans
                               &trans      &clr_mo 5   &trans         &trans        &trans    &trans
             >;
 
