@@ -7,6 +7,8 @@
 /* Global settings */
 // #define QUICK_TAP_MS 175
 
+#include "mouse.dtsi"
+
 &sk {
     release-after-ms = <900>;  // release after 0.6s
     quick-release;             // no double capitalization when rolling keys
@@ -45,6 +47,12 @@
         tab_combo {
             bindings = <&hml LS(LCTRL) TAB>;
             key-positions = <15 16>;
+            require-prior-idle-ms = <150>;
+        };
+
+        mouse_combo {
+            bindings = <&smart_mouse>;
+            key-positions = <2 4>;
             require-prior-idle-ms = <150>;
         };
     };
@@ -274,6 +282,16 @@
             hold-trigger-on-release;
             require-prior-idle-ms = <150>;
         };
+
+        smart_mouse: smart_mouse {
+            compatible = "zmk,behavior-tri-state";
+            label = "SMART_MOUSE";
+            bindings = <&tog 8>, <&none>, <&tog 8>;
+
+            #binding-cells = <0>;
+            ignored-key-positions = <2 4 7 8 9 13 14 15 16 19 20 21 38 39 40 41>;
+            ignored-layers = <8>;
+        };
     };
 
     keymap {
@@ -365,6 +383,17 @@
             >;
 
             label = "FunKy";
+        };
+
+        mouse {
+            bindings = <
+&trans  &trans     &trans      &trans      &trans      &trans         &trans      U_WH_D     U_MS_U   U_WH_U  &kp K_CANCEL   &trans
+&trans  &trans     &trans      &trans      &trans      &trans         &trans      U_MS_L     U_MS_D   U_MS_R  &trans         &trans
+&trans  &trans     &trans      &trans      &trans      &trans         &trans      &trans     &trans   &trans  &trans         &trans
+                               &trans      &trans      &trans         U_BTN1      U_BTN2     U_BTN3
+            >;
+
+            label = "MOUSE";
         };
     };
 
