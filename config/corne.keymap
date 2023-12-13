@@ -115,7 +115,7 @@
             quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
             require-prior-idle-ms = <150>;
-            retro-tap;
+            // do not use retro-tap, as this is a mouse-click combo
         };
 
         bspc_del: backspace_delete {
