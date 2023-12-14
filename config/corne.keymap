@@ -29,30 +29,35 @@
         esc_combo {
             bindings = <&kp ESC>;
             key-positions = <7 8>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
 
         cancel {
             bindings = <&kp K_CANCEL>;
             key-positions = <3 4>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
 
         db_combo {
             bindings = <&hmr_bspc RS(RCTRL) 0>;
             key-positions = <19 20>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
 
         tab_combo {
             bindings = <&hml LS(LCTRL) TAB>;
             key-positions = <15 16>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
 
         mouse_combo {
             bindings = <&smart_mouse>;
             key-positions = <2 4>;
+            timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
     };
