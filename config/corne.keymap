@@ -309,7 +309,7 @@
 &trans  &kp Q        &kp W            &kp E         &kp R         &kp T              &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G              &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X            &kp C         &kp V         &kp B              &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &bspc_del     &mo 1         &sm LCTRL SPACE    &smart_shft  &smart_numw 2 0  &kp ENTER
+                                      &none         &mo 1         &sm LCTRL SPACE    &smart_shft  &smart_numw 2 0  &kp ENTER
             >;
 
             label = "Win";
@@ -353,7 +353,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R         &kp T             &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G             &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V         &kp B             &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &bspc_del     &mo 5         &sm LGUI SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
+                                  &none         &mo 5         &sm LGUI SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
             >;
 
             label = "Mac";
