@@ -26,8 +26,8 @@
     combos {
         compatible = "zmk,combos";
 
-        esc_combo {
-            bindings = <&kp ESC>;
+        db_combo {
+            bindings = <&bspc_del>;
             key-positions = <7 8>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
@@ -40,8 +40,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        db_combo {
-            bindings = <&hmr_bspc RS(RCTRL) 0>;
+        esc_combo {
+            bindings = <&hmr RS(RCTRL) ESC>;
             key-positions = <19 20>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
