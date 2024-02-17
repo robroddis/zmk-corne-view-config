@@ -33,8 +33,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        cancel {
-            bindings = <&kp K_CANCEL>;
+        tab_combo {
+            bindings = <&kp TAB>;
             key-positions = <3 4>;
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
@@ -47,8 +47,8 @@
             require-prior-idle-ms = <200>;
         };
 
-        tab_combo {
-            bindings = <&hml LS(LCTRL) TAB>;
+        cancel {
+            bindings = <&hml LS(LCTRL) K_CANCEL>;
             key-positions = <15 16>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
