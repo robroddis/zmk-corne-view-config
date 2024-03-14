@@ -29,7 +29,7 @@
         db_combo {
             bindings = <&bspc_del>;
             key-positions = <7 8>;
-            timeout-ms = <20>;
+            timeout-ms = <18>;
             require-prior-idle-ms = <150>;
         };
 
