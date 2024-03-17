@@ -29,15 +29,15 @@
         db_combo {
             bindings = <&bspc_del>;
             key-positions = <7 8>;
-            timeout-ms = <18>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <120>;
         };
 
         tab_combo {
             bindings = <&kp TAB>;
             key-positions = <3 4>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <18>;
+            require-prior-idle-ms = <200>;
         };
 
         esc_combo {
@@ -130,17 +130,17 @@
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
 
         ss_cw: sticky_capsword {
             compatible = "zmk,behavior-mod-morph";
             label = "STICKY_CAPSWORD";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&sk RSHFT>, <&caps_word>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
 
         lst: lshift_tap {
@@ -208,11 +208,11 @@
         smart_shft: smart_shft {
             compatible = "zmk,behavior-mod-morph";
             label = "SMART_SHFT";
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&sk RSHFT>, <&caps_word>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT)>;
         };
 
         // tap: num-word | double-tap: sticky num-layer | hold: num-layer
@@ -394,7 +394,7 @@
 
         mouse {
             bindings = <
-&trans  &trans     &trans      &trans      &trans      &trans         &trans      U_WH_D     U_MS_U   U_WH_U  &kp K_CANCEL   &trans
+&trans  &trans     &trans      &trans      &trans      &trans         &trans      U_WH_D     U_MS_U   U_WH_U  &trans         &trans
 &trans  &kp LGUI   &kp LALT    &kp LCTRL   &kp LSHFT   &trans         &trans      U_MS_L     U_MS_D   U_MS_R  &trans         &trans
 &trans  &trans     &trans      &trans      &trans      &trans         &trans      &trans     &trans   &trans  &trans         &trans
                                &trans      &trans      &trans         &mkp LCLK   &mkp MCLK  &mkp RCLK
