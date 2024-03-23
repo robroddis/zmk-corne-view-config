@@ -293,11 +293,11 @@
         smart_mouse: smart_mouse {
             compatible = "zmk,behavior-tri-state";
             label = "SMART_MOUSE";
-            bindings = <&tog 8>, <&none>, <&tog 8>;
+            bindings = <&tog 12>, <&none>, <&tog 8>;
 
             #binding-cells = <0>;
             ignored-key-positions = <2 4 7 8 9 13 14 15 16 19 20 21 38 39 40 41>;
-            ignored-layers = <8>;
+            ignored-layers = <12>;
         };
     };
 
@@ -339,7 +339,7 @@
 
         win_fun {
             bindings = <
-&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &trans  &to 4    &trans
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &to 8   &to 4    &trans
 &trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
 &trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &trans  &trans  &kp F12  &trans
                                &trans      &trans      &trans         &trans       &trans      &trans
@@ -383,7 +383,7 @@
 
         mac_fun {
             bindings = <
-&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &trans  &to 0    &trans
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &to 8   &to 0    &trans
 &trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
 &trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &trans  &trans  &kp F12  &trans
                                &trans      &trans      &trans         &trans       &trans      &trans
@@ -391,6 +391,56 @@
 
             label = "FunKy";
         };
+
+        cmw_base {
+            bindings = <
+            /*
+Q W F P B   J L U Y ;
+A R S T G   M N E I O
+Z X C D V   K H , . /
+            */
+&trans  &kp Q        &kp W            &kp F         &kp P         &kp B              &kp J        &kp L             &kp U         &kp Y            &kp SEMI     &trans
+&trans  &hml LGUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LSHFT T  &kp G              &kp M        &hmr RSHFT N      &hmr RCTRL E  &hmr LEFT_ALT I  &hmr LGUI O  &trans
+&trans  &kp Z        &kp X            &kp C         &kp D         &kp V              &kp K        &kp H             &kp COMMA     &kp DOT          &kp FSLH     &trans
+                                      &none         &mo 9         &kp SPACE          &smart_shft  &smart_numw 10 0  &kp ENTER
+            >;
+
+            label = "CoMak";
+        };
+
+        cmw_nav {
+            bindings = <
+&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL &kp UNDER    &kp GRAVE   &kp HOME   &kp UP         &kp END      &kp PG_UP  &trans
+&trans  &kp LBRC  &kp LBKT    &kp RBKT  &kp RBRC  &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
+&trans  &trans    &kp MINUS   &kp PLUS  &trans    &kp AMPS     &kp TILDE2  &kp PIPE2  &kp LS(COMMA)  &kp LS(DOT)  &kp NUBS   &trans
+                              &trans    &trans    &trans       &kp LSHFT   &kp BSPC   &kp ENTER
+            >;
+
+            label = "< NAV >";
+        };
+
+        cmw_num {
+            bindings = <
+&trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
+&trans  &kp N1    &kp N2     &kp N3    &kp N4     &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0    &trans
+&trans  &kp SQT   &kp MINUS  &kp PLUS  &trans     &trans       &kp K_CANCEL  &trans    &trans        &trans    &trans    &trans
+                             &trans    &clr_mo 9  &trans       &trans        &trans    &trans
+            >;
+
+            label = "1 2 3";
+        };
+
+        cmw_fun {
+            bindings = <
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &trans  &to 4    &trans
+&trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
+&trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &trans  &trans  &kp F12  &trans
+                               &trans      &trans      &trans         &trans       &trans      &trans
+            >;
+
+            label = "Fun !!";
+        };
+
 
         mouse {
             bindings = <
@@ -402,6 +452,7 @@
 
             label = "MOUSE";
         };
+
     };
 
     conditional_layers {
@@ -415,6 +466,11 @@
         mac_ctrl_layer {
             if-layers = <5 6>;
             then-layer = <7>;
+        };
+
+        cmw_ctrl_layer {
+            if-layers = <9 10>;
+            then-layer = <11>;
         };
     };
 };
