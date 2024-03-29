@@ -322,9 +322,9 @@
 
         mac_nav {
             bindings = <
-&trans  &kp EXCL  &kp DQT    &kp SQT   &kp EQUAL  &kp UNDER    &kp GRAVE  &kp HOME  &kp UP         &kp END      &kp PG_UP  &trans
-&trans  &kp LBRC  &kp LBKT   &kp RBKT  &kp RBRC   &kp STAR     &kp COLON  &kp LEFT  &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
-&trans  &trans    &kp MINUS  &kp PLUS  &trans     &kp AMPS     &kp TILDE  &kp PIPE  &kp LS(COMMA)  &kp LS(DOT)  &kp BSLH   &trans
+&trans  &kp EXCL  &kp DQT    &kp SQT   &kp GRAVE  &kp UNDER    &none      &kp HOME  &kp UP         &kp END      &kp PG_UP  &trans
+&trans  &kp LGUI  &kp LALT   &kp LCTRL &kp LSHFT  &kp MINUS    &none      &kp LEFT  &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
+&trans  &kp LG(Z) &kp LG(X)  &kp LG(C) &kp LG(V)  &none        &kp PIPE   &kp LBRC  &kp RBRC       &kp LBKT     &kp RBKT   &trans
                              &trans    &trans     &trans       &trans     &trans    &trans
             >;
 
@@ -335,7 +335,7 @@
             bindings = <
 &trans  &kp EXCL  &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET     &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1    &kp N2      &kp N3      &kp N4      &kp N5         &kp N6        &kp N7    &kp N8     &kp N9    &kp N0    &trans
-&trans  &kp SQT   &kp MINUS   &kp PLUS    &trans      &trans         &kp K_CANCEL  &trans    &trans     &trans    &trans    &trans
+&trans  &kp TILDE &kp MINUS   &kp PLUS    &kp EQUAL   &kp BSLH       &trans        &trans    &trans     &trans    &trans    &trans
                               &trans      &clr_mo 5   &trans         &trans        &trans    &trans
             >;
 
