@@ -21,7 +21,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-
+        /*
         db_combo {
             bindings = <&bspc_del>;
             key-positions = <7 8>;
@@ -42,6 +42,7 @@
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
+        */
 
         cancel {
             bindings = <&hml LS(LCTRL) K_CANCEL>;
@@ -157,24 +158,24 @@
             keep-mods = <(MOD_LSFT)>;
         };
 
-        // tap: num-word | double-tap: sticky num-layer | hold: num-layer
+        // tap: sticky num-layer | shift-tap: num-word | hold: num-layer
 
         smart_numw: smart_numw {
             compatible = "zmk,behavior-hold-tap";
             label = "SMART_NUMW";
-            bindings = <&mo>, <&num_dancew>;
+            bindings = <&mo>, <&sticky_numw>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
         };
 
-        num_dancew: num_dancew {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_DANCEW";
-            tapping-term-ms = <200>;
+        sticky_numw: sticky_numw {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STICKY_NUMW";
             #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&sl 2>, <&num_wordw>;
         };
 
@@ -183,28 +184,28 @@
             label = "NUM_WORDW";
             #binding-cells = <0>;
             layers = <2>;
-            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+            continue-list = <BSPC DEL DOT MINUS PLUS>;
             ignore-numbers;
         };
 
-        // tap: num-word | double-tap: sticky num-layer | hold: num-layer
+        // tap: sticky num-layer | shift-tap: num-word | hold: num-layer
 
         smart_numm: smart_numm {
             compatible = "zmk,behavior-hold-tap";
             label = "SMART_NUMM";
-            bindings = <&mo>, <&num_dancem>;
+            bindings = <&mo>, <&sticky_numm>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
-        num_dancem: num_dancem {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_DANCEM";
-            tapping-term-ms = <200>;
+        sticky_numm: sticky_numm {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STICKY_NUMM";
             #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&sl 6>, <&num_wordm>;
         };
 
@@ -213,28 +214,28 @@
             label = "NUM_WORDM";
             #binding-cells = <0>;
             layers = <6>;
-            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+            continue-list = <BSPC DEL DOT MINUS PLUS>;
             ignore-numbers;
         };
 
-        // tap: num-word | double-tap: sticky num-layer | hold: num-layer
+        // tap: sticky num-layer | shift-tap: num-word | hold: num-layer
 
         smart_numc: smart_numc {
             compatible = "zmk,behavior-hold-tap";
             label = "SMART_NUMC";
-            bindings = <&mo>, <&num_dancec>;
+            bindings = <&mo>, <&sticky_numc>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };
 
-        num_dancec: num_dancec {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_DANCEC";
-            tapping-term-ms = <200>;
+        sticky_numc: sticky_numc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "STICKY_NUMC";
             #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&sl 10>, <&num_wordc>;
         };
 
@@ -243,7 +244,7 @@
             label = "NUM_WORDC";
             #binding-cells = <0>;
             layers = <10>;
-            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LPAR RPAR>;
+            continue-list = <BSPC DEL DOT MINUS PLUS>;
             ignore-numbers;
         };
 
@@ -256,6 +257,7 @@
             ignored-key-positions = <2 4 7 8 9 13 14 15 16 19 20 21 38 39 40 41>;
             ignored-layers = <12>;
         };
+
     };
 
     keymap {
@@ -266,7 +268,7 @@
 &trans  &kp Q        &kp W            &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X            &kp C         &kp V         &kp B        &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                      &none         &mo 1         &kp SPACE    &smart_shft  &smart_numw 2 0  &kp ENTER
+                                      &kp TAB       &mo 1         &kp SPACE    &smart_shft  &smart_numw 2 0  &kp ENTER
             >;
 
             label = "Win";
@@ -274,10 +276,10 @@
 
         win_nav {
             bindings = <
-&trans  &kp EXCL   &kp LS(N2)  &kp SQT    &kp GRAVE  &kp UNDER    &none      &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LGUI   &kp LALT    &kp LCTRL  &kp LSHFT  &kp MINUS    &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)  &none        &kp PIPE2  &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
-                               &trans     &trans     &trans       &trans     &trans    &trans
+&trans  &kp EXCL   &kp LS(N2)  &kp SQT    &kp GRAVE  &kp UNDER    &none       &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans  &kp LGUI   &kp LALT    &kp LCTRL  &kp LSHFT  &kp MINUS    &none       &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)  &none        &kp PIPE2   &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
+                               &trans     &trans     &trans       &kp BSPC    &kp DEL   &kp ESC
             >;
 
             label = "< $ym >";
@@ -288,7 +290,7 @@
 &trans  &kp EXCL    &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1      &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7    &kp N8        &kp N9    &kp N0    &trans
 &trans  &kp TILDE2  &kp MINUS  &kp PLUS  &kp EQUAL  &kp NUBS     &none      &trans    &trans        &trans    &trans    &trans
-                               &trans    &clr_mo 1  &trans       &trans     &trans    &trans
+                               &trans    &clr_mo 1  &trans       &kp BSPC   &trans    &kp ESC
             >;
 
             label = "1 2 3";
@@ -296,9 +298,9 @@
 
         win_fun {
             bindings = <
-&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &trans  &to 8   &to 4    &trans
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &none   &to 8   &to 4    &trans
 &trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
-&trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &trans  &trans  &kp F12  &trans
+&trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &none   &none   &kp F12  &trans
                                &trans      &trans      &trans         &trans       &trans      &trans
             >;
 
@@ -310,7 +312,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O            &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LEFT_ALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N        &kp M            &kp COMMA     &kp DOT          &kp FSLH        &trans
-                                  &none         &mo 5         &kp SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
+                                  &kp TAB       &mo 5         &kp SPACE    &smart_shft  &smart_numm 6 0  &kp ENTER
             >;
 
             label = "Mac";
@@ -318,10 +320,10 @@
 
         mac_nav {
             bindings = <
-&trans  &kp EXCL   &kp DQT    &kp SQT    &kp GRAVE  &kp UNDER    &none     &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp MINUS    &none     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none        &kp PIPE  &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
-                              &trans     &trans     &trans       &trans    &trans    &trans
+&trans  &kp EXCL   &kp DQT    &kp SQT    &kp GRAVE  &kp UNDER    &none       &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp MINUS    &none       &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none        &kp PIPE    &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
+                              &trans     &trans     &trans       &kp BSPC    &kp DEL   &kp ESC
             >;
 
             label = "< Nav >";
@@ -332,7 +334,7 @@
 &trans  &kp EXCL   &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1     &kp N2      &kp N3      &kp N4      &kp N5         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans
 &trans  &kp TILDE  &kp MINUS   &kp PLUS    &kp EQUAL   &kp BSLH       &trans     &trans    &trans     &trans    &trans    &trans
-                               &trans      &clr_mo 5   &trans         &trans     &trans    &trans
+                               &trans      &clr_mo 5   &trans         &kp BSPC   &trans    &kp ESC
             >;
 
             label = "0 1 2";
@@ -354,7 +356,7 @@
 &trans  &kp Q        &kp W            &kp F         &kp P         &kp B        &kp J        &kp L             &kp U         &kp Y            &kp SEMI     &trans
 &trans  &hml LGUI A  &hml LEFT_ALT R  &hml LCTRL S  &hml LSHFT T  &kp G        &kp M        &hmr RSHFT N      &hmr RCTRL E  &hmr LEFT_ALT I  &hmr LGUI O  &trans
 &trans  &kp Z        &kp X            &kp C         &kp D         &kp V        &kp K        &kp H             &kp COMMA     &kp DOT          &kp FSLH     &trans
-                                      &none         &mo 9         &kp SPACE    &smart_shft  &smart_numc 10 0  &kp ENTER
+                                      &kp TAB       &mo 9         &kp SPACE    &smart_shft  &smart_numc 10 0  &kp ENTER
             >;
 
             label = "CoMak";
@@ -362,10 +364,10 @@
 
         cmw_nav {
             bindings = <
-&trans  &kp EXCL  &kp LS(N2)  &kp SQT   &kp EQUAL  &kp UNDER    &kp GRAVE   &kp HOME   &kp UP         &kp END      &kp PG_UP  &trans
-&trans  &kp LBRC  &kp LBKT    &kp RBKT  &kp RBRC   &kp STAR     &kp COLON   &kp LEFT   &kp DOWN       &kp RIGHT    &kp PG_DN  &trans
-&trans  &trans    &kp MINUS   &kp PLUS  &trans     &kp AMPS     &kp TILDE2  &kp PIPE2  &kp LS(COMMA)  &kp LS(DOT)  &kp NUBS   &trans
-                              &trans    &trans     &trans       &kp LSHFT   &kp BSPC   &kp ENTER
+&trans  &kp EXCL   &kp LS(N2)    &kp SQT    &kp GRAVE  &kp UNDER    &none       &kp HOME        &kp UP           &kp END           &kp PG_UP  &trans
+&trans  &kp LGUI   &kp LEFT_ALT  &kp LCTRL  &kp LSHFT  &kp MINUS    &none       &kp LEFT        &kp DOWN         &kp RIGHT         &kp PG_DN  &trans
+&trans  &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &none        &kp PIPE2   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp LEFT_BRACKET  &kp RBKT   &trans
+                                 &trans     &trans     &trans       &kp BSPC    &kp DEL         &kp ESC
             >;
 
             label = "< NAV >";
@@ -376,7 +378,7 @@
 &trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET     &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1    &kp N2     &kp N3    &kp N4     &kp N5       &kp N6        &kp N7    &kp N8        &kp N9    &kp N0    &trans
 &trans  &kp SQT   &kp MINUS  &kp PLUS  &trans     &trans       &kp K_CANCEL  &trans    &trans        &trans    &trans    &trans
-                             &trans    &clr_mo 9  &trans       &trans        &trans    &trans
+                             &trans    &clr_mo 9  &trans       &kp BSPC      &trans    &kp ESC
             >;
 
             label = "C 1 2 3";
@@ -390,7 +392,7 @@
                                &trans      &trans      &trans         &trans       &trans      &trans
             >;
 
-            label = "C-Fun";
+            label = "C Fun";
         };
 
         mouse {
