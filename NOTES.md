@@ -2,6 +2,15 @@
 
 Note to self: Use this to try out new keymap ideas around the time of changes.
 
+## Playing with preventing unwanted caps_word
+Double-tapping RT1 shift enabled caps_word - sticky shift + shift -> caps_word.
+
+Disabling quick-tap-ms on the num-layer prevents double-tap to caps_number.
+Also switch to hold-preferred flavor - this helps single tap numbers.
+
+Change the mod-morph on caps_word to take LSHFT, so that doesn't fire on a double-tap
+sticky shift gives "RSHFT", which won't trigger the mod-morph.
+
 ## Note that the most likely useful source of context is the Git log
 
 This file will change / be used as / when things are fiddled with to test how changes are working.
