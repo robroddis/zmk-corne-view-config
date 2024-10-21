@@ -21,6 +21,7 @@
 / {
     combos {
         compatible = "zmk,combos";
+
         /*
         db_combo {
             bindings = <&bspc_del>;
@@ -57,6 +58,14 @@
             timeout-ms = <20>;
             require-prior-idle-ms = <200>;
         };
+
+        cw_combo {
+            bindings = <&caps_word>;
+            key-positions = <16 19>;
+            layers = <0 6 1 7>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
+        };
     };
 
     macros {
@@ -81,7 +90,7 @@
                 <&macro_tap>,
                 <&bt BT_SEL MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&to 5>;
+                <&to 6>;
         };
 
         // Special case for the number layer, this issues a cancel before pressing
@@ -174,7 +183,7 @@
             label = "STICKY_NUMW";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&sl 3>, <&num_wordw>;
+            bindings = <&sl 4>, <&num_wordw>;
         };
 
         num_wordw: num_wordw {
@@ -203,7 +212,7 @@
             label = "STICKY_NUMM";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            bindings = <&sl 8>, <&num_wordm>;
+            bindings = <&sl 9>, <&num_wordm>;
         };
 
         num_wordm: num_wordm {
@@ -224,7 +233,6 @@
             ignored-key-positions = <2 4 7 8 9 13 14 15 16 19 20 21 39 40 41>;
             ignored-layers = <10>;
         };
-
     };
 
     keymap {
@@ -232,10 +240,10 @@
 
         win_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N        &kp M            &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &kp TAB       &mo 2         &kp SPACE    &smart_shft  &smart_numw 3 0  &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y  &kp U            &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H  &hmr RSHFT J     &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N  &kp M            &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &kp TAB       &mo 2         &kp SPACE    &mo 3  &smart_numw 4 0  &kp ENTER
             >;
 
             label = "Win";
@@ -246,29 +254,39 @@
 &trans  &kp Q        &kp W        &kp F         &kp P         &kp B        &kp J        &kp L            &kp U         &kp Y        &kp SEMI     &trans
 &trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G        &kp M        &hmr RSHFT N     &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
 &trans  &kp Z        &kp X        &kp C         &kp D         &kp V        &kp K        &kp H            &kp COMMA     &kp DOT      &kp FSLH     &trans
-                                  &kp TAB       &mo 2         &kp SPACE    &smart_shft  &smart_numw 3 0  &kp ENTER
-                >;
+                                  &kp TAB       &mo 2         &kp SPACE    &smart_shft  &smart_numw 4 0  &kp ENTER
+            >;
 
             label = "CoMak";
         };
 
         win_nav {
             bindings = <
-&trans  &kp EXCL   &kp LS(N2)  &kp SQT    &kp GRAVE  &kp UNDER    &none       &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LGUI   &kp LALT    &kp LCTRL  &kp LSHFT  &kp MINUS    &none       &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp LC(Z)  &kp LC(X)   &kp LC(C)  &kp LC(V)  &none        &kp PIPE2   &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
-                               &trans     &trans     &trans       &kp BSPC    &kp DEL   &kp ESC
+&trans  &none      &none      &none      &kp ESCAPE  &none     &none     &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT   &none     &none     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)   &none     &none     &none     &none     &none      &none      &trans
+                              &trans     &trans      &trans    &kp BSPC  &kp DEL   &kp ESC
             >;
 
+            label = "N A V";
+        };
+
+        Win_SYM {
             label = "< $ym >";
+            bindings = <
+&trans  &trans      &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
+&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NUBS     &none   &none      &none      &none     &none  &trans
+                                &trans    &trans    &trans       &trans  &trans     &trans
+            >;
         };
 
         win_num {
             bindings = <
-&trans  &kp EXCL    &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
-&trans  &kp N1      &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7    &kp N8        &kp N9    &kp N0    &trans
-&trans  &kp TILDE2  &kp MINUS  &kp PLUS  &kp EQUAL  &kp NUBS     &none      &trans    &trans        &trans    &trans    &trans
-                               &trans    &clr_mo 2  &trans       &kp BSPC   &trans    &kp ESC
+&trans  &kp EXCL  &kp DQT    &kp NUHS  &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTERISK  &kp LPAR  &kp RPAR  &trans
+&trans  &kp N1    &kp N2     &kp N3    &kp N4     &kp N5       &kp N6     &kp N7    &kp N8        &kp N9    &kp N0    &trans
+&trans  &none     &kp MINUS  &kp PLUS  &kp EQUAL  &kp NUBS     &none      &trans    &trans        &trans    &trans    &trans
+                             &trans    &clr_mo 2  &trans       &kp BSPC   &trans    &kp ESC
             >;
 
             label = "1 2 3";
@@ -276,7 +294,7 @@
 
         win_fun {
             bindings = <
-&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &to 0   &to 1   &to 5    &trans
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &to 0   &to 1   &to 6    &trans
 &trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
 &trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &none   &none   &kp F12  &trans
                                &trans      &trans      &trans         &trans       &trans      &trans
@@ -290,7 +308,7 @@
 &trans  &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y        &kp U            &kp I         &kp O        &kp P           &trans
 &trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G        &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
 &trans  &kp Z        &kp X        &kp C         &kp V         &kp B        &kp N        &kp M            &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &kp TAB       &mo 7         &kp SPACE    &smart_shft  &smart_numm 8 0  &kp ENTER
+                                  &kp TAB       &mo 8         &kp SPACE    &smart_shft  &smart_numm 9 0  &kp ENTER
             >;
 
             label = "Mac";
@@ -301,18 +319,18 @@
 &trans  &kp Q        &kp W        &kp F         &kp P         &kp B        &kp J        &kp L            &kp U         &kp Y        &kp SEMI     &trans
 &trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G        &kp M        &hmr RSHFT N     &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
 &trans  &kp Z        &kp X        &kp C         &kp D         &kp V        &kp K        &kp H            &kp COMMA     &kp DOT      &kp FSLH     &trans
-                                  &kp TAB       &mo 7         &kp SPACE    &smart_shft  &smart_numm 8 0  &kp ENTER
-                >;
+                                  &kp TAB       &mo 8         &kp SPACE    &smart_shft  &smart_numm 9 0  &kp ENTER
+            >;
 
             label = "CoMac";
         };
 
         mac_nav {
             bindings = <
-&trans  &kp EXCL   &kp DQT    &kp SQT    &kp GRAVE  &kp UNDER    &none       &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
-&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp MINUS    &none       &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
-&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none        &kp PIPE    &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
-                              &trans     &trans     &trans       &kp BSPC    &kp DEL   &kp ESC
+&trans  &kp EXCL   &kp DQT    &kp SQT    &kp GRAVE  &kp UNDER    &none     &kp HOME  &kp UP    &kp END    &kp PG_UP  &trans
+&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp MINUS    &none     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN  &trans
+&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none        &kp PIPE  &kp LBRC  &kp RBRC  &kp LBKT   &kp RBKT   &trans
+                              &trans     &trans     &trans       &kp BSPC  &kp DEL   &kp ESC
             >;
 
             label = "< Nav >";
@@ -323,7 +341,7 @@
 &trans  &kp EXCL   &kp LS(N2)  &kp LA(N3)  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
 &trans  &kp N1     &kp N2      &kp N3      &kp N4      &kp N5         &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &trans
 &trans  &kp TILDE  &kp MINUS   &kp PLUS    &kp EQUAL   &kp BSLH       &trans     &trans    &trans     &trans    &trans    &trans
-                               &trans      &clr_mo 7   &trans         &kp BSPC   &trans    &kp ESC
+                               &trans      &clr_mo 8   &trans         &kp BSPC   &trans    &kp ESC
             >;
 
             label = "0 1 2";
@@ -331,7 +349,7 @@
 
         mac_fun {
             bindings = <
-&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &to 5   &to 6   &to 0    &trans
+&trans  &win_bt 0  &mac_bt 1   &mac_bt 2   &win_bt 3   &win_bt 4      &bt BT_CLR   &trans      &to 6   &to 7   &to 0    &trans
 &trans  &kp F1     &kp F2      &kp F3      &kp F4      &kp F5         &kp F6       &kp F7      &kp F8  &kp F8  &kp F10  &trans
 &trans  &kp F11    &bt BT_PRV  &bt BT_NXT  &sys_reset  &bootloader    &bootloader  &sys_reset  &trans  &trans  &kp F12  &trans
                                &trans      &trans      &trans         &trans       &trans      &trans
@@ -342,10 +360,9 @@
 
         mouse {
             bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans    &trans     U_WH_D     U_MS_U     U_WH_U  &trans  &trans
-&trans     &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &trans    &trans     U_MS_L     U_MS_D     U_MS_R  &trans  &trans
-&trans     &trans     &trans     &trans     &trans     &trans    &trans     &trans     &trans     &trans  &trans  &trans
-                                 &trans     &trans     &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK
+&trans     &trans     &trans  &trans                       &trans  &trans    &trans U_WH_D U_MS_U U_WH_U  &trans  &trans  &trans     &kp LGUI   &kp LALT
+&kp LCTRL  &kp LSHFT  &trans  &trans U_MS_L U_MS_D U_MS_R  &trans  &trans    &trans                       &trans  &trans  &trans     &trans     &trans
+&trans     &trans     &trans  &trans                       &trans  &trans    &trans                       &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK
             >;
 
             label = "MOUSE";
@@ -356,14 +373,13 @@
         compatible = "zmk,conditional-layers";
 
         ctrl_layer {
-            if-layers = <2 3>;
-            then-layer = <4>;
+            if-layers = <2 4>;
+            then-layer = <5>;
         };
 
         mac_ctrl_layer {
-            if-layers = <7 8>;
-            then-layer = <9>;
+            if-layers = <8 9>;
+            then-layer = <10>;
         };
     };
 };
-
