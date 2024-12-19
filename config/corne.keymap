@@ -275,7 +275,7 @@
             label = "< $ym >";
             bindings = <
 &trans  &kp EXCL    &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none     &trans
-&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp LGUI  &trans
+&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none     &trans
 &trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NUBS     &none   &none      &none      &none     &none     &trans
                                 &trans    &trans    &trans       &trans  &trans     &trans
             >;
@@ -340,7 +340,7 @@
             label = "SyMac";
             bindings = <
 &trans  &kp EXCL    &kp DQT     &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none     &trans
-&trans  &kp TILDE   &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp TILDE   &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp LALT  &none     &trans
 &trans  &kp PIPE    &kp GRAVE   &kp LPAR  &kp RPAR  &kp BSLH     &none   &none      &none      &none     &none     &trans
                                 &trans    &trans    &trans       &trans  &trans     &trans
             >;
