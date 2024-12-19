@@ -341,7 +341,7 @@
             bindings = <
 &trans  &trans      &kp DQT     &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none     &trans
 &trans  &kp TILDE   &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
-&trans  &kp PIPE    &kp GRAVE   &kp LPAR  &kp RPAR  &kp NUBS     &none   &none      &none      &none     &none     &trans
+&trans  &kp PIPE    &kp GRAVE   &kp LPAR  &kp RPAR  &kp BSLH     &none   &none      &none      &none     &none     &trans
                                 &trans    &trans    &trans       &trans  &trans     &trans
             >;
         };
