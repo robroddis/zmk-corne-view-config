@@ -274,7 +274,7 @@
         Win_SYM {
             label = "< $ym >";
             bindings = <
-&trans  &trans      &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
+&trans  &kp EXCL    &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
 &trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
 &trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NUBS     &none   &none      &none      &none     &none  &trans
                                 &trans    &trans    &trans       &trans  &trans     &trans
@@ -339,7 +339,7 @@
         mac_SYM {
             label = "SyMac";
             bindings = <
-&trans  &trans      &kp DQT     &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none     &trans
+&trans  &kp EXCL    &kp DQT     &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none     &trans
 &trans  &kp TILDE   &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
 &trans  &kp PIPE    &kp GRAVE   &kp LPAR  &kp RPAR  &kp BSLH     &none   &none      &none      &none     &none     &trans
                                 &trans    &trans    &trans       &trans  &trans     &trans
