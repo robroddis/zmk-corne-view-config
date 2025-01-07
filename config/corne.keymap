@@ -71,7 +71,6 @@
 
     macros {
         win_bt: win_bt {
-            label = "win_bt";
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
@@ -83,7 +82,6 @@
         };
 
         mac_bt: mac_bt {
-            label = "mac_bt";
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
@@ -113,14 +111,12 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
 
-            label = "CLR_MO";
         };
     };
 
     behaviors {
         bspc_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
@@ -130,7 +126,6 @@
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -145,7 +140,6 @@
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -160,7 +154,6 @@
 
         smart_shft: smart_shft {
             compatible = "zmk,behavior-mod-morph";
-            label = "SMART_SHFT";
             bindings = <&sk RSHFT>, <&caps_word>;
 
             #binding-cells = <0>;
@@ -171,7 +164,6 @@
 
         smart_numw: smart_numw {
             compatible = "zmk,behavior-hold-tap";
-            label = "SMART_NUMW";
             bindings = <&mo>, <&sticky_numw>;
 
             #binding-cells = <2>;
@@ -181,7 +173,6 @@
 
         sticky_numw: sticky_numw {
             compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_NUMW";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&sl 4>, <&num_wordw>;
@@ -189,7 +180,6 @@
 
         num_wordw: num_wordw {
             compatible = "zmk,behavior-caps-word";
-            label = "NUM_WORDW";
             #binding-cells = <0>;
             layers = <4>;
             continue-list = <BSPC DEL DOT MINUS PLUS>;
@@ -200,7 +190,6 @@
 
         smart_numm: smart_numm {
             compatible = "zmk,behavior-hold-tap";
-            label = "SMART_NUMM";
             bindings = <&mo>, <&sticky_numm>;
 
             #binding-cells = <2>;
@@ -210,7 +199,6 @@
 
         sticky_numm: sticky_numm {
             compatible = "zmk,behavior-mod-morph";
-            label = "STICKY_NUMM";
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             bindings = <&sl 11>, <&num_wordm>;
@@ -218,7 +206,6 @@
 
         num_wordm: num_wordm {
             compatible = "zmk,behavior-caps-word";
-            label = "NUM_WORDM";
             #binding-cells = <0>;
             layers = <10>;
             continue-list = <BSPC DEL DOT MINUS PLUS>;
@@ -227,7 +214,6 @@
 
         smart_mouse: smart_mouse {
             compatible = "zmk,behavior-tri-state";
-            label = "SMART_MOUSE";
             bindings = <&tog 12>, <&none>, <&tog 12>;
 
             #binding-cells = <0>;
@@ -247,7 +233,7 @@
                                   &lt 5 TAB     &mo 2         &lt 4 SPACE    &smart_shft  &sl 3         &kp ENTER
             >;
 
-            label = "Win";
+            display-name = "Win";
         };
 
         win_colemak {
@@ -258,7 +244,7 @@
                                   &kp TAB       &mo 2         &kp SPACE    &sl 3  &smart_numw 4 0  &kp ENTER
             >;
 
-            label = "CoMak";
+            display-name = "CoMak";
         };
 
         win_nav {
@@ -269,11 +255,11 @@
                               &trans     &trans      &trans    &kp BSPC  &kp DEL   &kp ESC
             >;
 
-            label = "N A V";
+            display-name = "N A V";
         };
 
         Win_SYM {
-            label = "< $ym >";
+            display-name = "< $ym >";
             bindings = <
 &trans  &kp QMARK   &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
 &trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
@@ -290,7 +276,7 @@
                            &kp DOT  &clr_mo 2  &kp BSPC    &trans   &trans     &kp DOT
             >;
 
-            label = "1 2 3";
+            display-name = "1 2 3";
         };
 
         Win_Sym2 {
@@ -310,7 +296,7 @@
                                     &trans         &trans         &trans         &trans       &trans         &trans
             >;
 
-            label = "Fun !!";
+            display-name = "Fun !!";
         };
 
         mac_base {
@@ -321,7 +307,7 @@
                                   &lt 10 TAB    &mo 9         &lt 11 SPACE  &smart_shft  &smart_numm 11 0  &kp ENTER
             >;
 
-            label = "Mac";
+            display-name = "Mac";
         };
 
         mac_colemak {
@@ -332,7 +318,7 @@
                                   &kp TAB       &mo 9         &kp SPACE    &sl 10  &smart_numm 11 0  &kp ENTER
             >;
 
-            label = "CoMac";
+            display-name = "CoMac";
         };
 
         mac_nav {
@@ -343,11 +329,11 @@
                               &trans     &trans      &trans    &kp BSPC  &kp DEL   &kp ESC
             >;
 
-            label = "< Nav >";
+            display-name = "< Nav >";
         };
 
         mac_SYM {
-            label = "SyMac";
+            display-name = "SyMac";
             bindings = <
 &trans  &none     &none     &none      &none      &none     &kp PLUS   &kp AMPS  &kp ASTRK   &kp LPAR    &kp RPAR  &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LBRC   &kp DLLR  &kp PRCNT   &kp CARET   &kp RBRC  &trans
@@ -364,7 +350,7 @@
                             &trans     &clr_mo 9  &trans    &kp BSPC   &trans  &kp DOT
             >;
 
-            label = "0 1 2";
+            display-name = "0 1 2";
         };
 
         mac_fun {
@@ -375,7 +361,7 @@
                                     &trans         &trans         &trans         &trans       &trans         &trans
             >;
 
-            label = "FunKy";
+            display-name = "FunKy";
         };
 
         mouse {
@@ -385,7 +371,7 @@
 &trans     &trans     &trans  &trans                       &trans  &trans    &trans                       &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK
             >;
 
-            label = "MOUSE";
+            display-name = "MOUSE";
         };
     };
 
