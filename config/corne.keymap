@@ -284,10 +284,10 @@
 
         win_num {
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp EQUAL  &kp N7  &kp N8   &kp N9  &kp N0    &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LBKT   &kp N4  &kp N5   &kp N6  &kp RBKT  &trans
-&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1  &kp N2   &kp N3  &kp NUBS  &trans
-                            &trans     &clr_mo 2  &trans    &kp BSPC   &trans  &kp DOT
+&trans  &kp EQUAL  &kp N7  &kp N8   &kp N9     &kp N0      &none    &none      &none       &none     &none     &trans
+&trans  &kp LBKT   &kp N4  &kp N5   &kp N6     &kp RBKT    &none    &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
+&trans  &kp MINUS  &kp N1  &kp N2   &kp N3     &kp NUBS    &none    &none      &none       &none     &none     &trans
+                           &kp DOT  &clr_mo 2  &kp BSPC    &trans   &trans     &kp DOT
             >;
 
             label = "1 2 3";
@@ -295,10 +295,10 @@
 
         Win_Sym2 {
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp PLUS   &kp AMPS  &kp ASTRK          &kp LPAR         &kp RPAR   &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LBRC   &kp DLLR  &kp PRCNT          &kp CARET        &kp RBRC   &trans
-&trans  &none     &none     &none      &none      &none     &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp NON_US_HASH  &kp PIPE2  &trans
-                            &trans     &trans     &trans    &trans     &trans    &kp TILDE2
+&trans  &kp PLUS   &kp AMPS  &kp ASTRK          &kp LPAR         &kp RPAR   &none   &none      &none       &none     &none     &trans
+&trans  &kp LBRC   &kp DLLR  &kp PRCNT          &kp CARET        &kp RBRC   &none   &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
+&trans  &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp NON_US_HASH  &kp PIPE2  &none   &none      &none       &none     &none     &trans
+                             &trans             &trans           &trans     &trans  &trans     &kp TILDE2
             >;
         };
 
