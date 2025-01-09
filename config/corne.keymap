@@ -15,6 +15,12 @@
     release-after-ms = <900>;  // release after 0.6s
 };
 
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <175>;
+};
+
 &caps_word {
     /delete-property/ ignore-modifiers;  // mods deactivate caps-word, requires PR #1451
 };
@@ -227,10 +233,10 @@
 
         win_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &lt 5 TAB     &mo 2         &lt 4 SPACE    &smart_shft  &sl 3         &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U            &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M            &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &lt 3 TAB     &mo 2         &kp SPACE      &smart_shft  &smart_numw 4 0  &lt 5 ENTER
             >;
 
             display-name = "Win";
@@ -270,10 +276,10 @@
 
         win_num {
             bindings = <
-&trans  &kp EQUAL  &kp N7  &kp N8   &kp N9     &kp N0      &none    &none      &none       &none     &none     &trans
-&trans  &kp LBKT   &kp N4  &kp N5   &kp N6     &kp RBKT    &none    &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
-&trans  &kp MINUS  &kp N1  &kp N2   &kp N3     &kp NUBS    &none    &none      &none       &none     &none     &trans
-                           &kp DOT  &clr_mo 2  &kp BSPC    &trans   &trans     &kp DOT
+&trans  &kp N7  &kp N8   &kp N9     &kp N0      &kp EQUAL  &none    &none      &none       &none     &none     &trans
+&trans  &kp N4  &kp N5   &kp N6     &kp LBKT    &kp RBKT   &none    &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
+&trans  &kp N1  &kp N2   &kp N3     &kp NUBS    &kp MINUS  &none    &none      &none       &none     &none     &trans
+                         &kp DOT    &clr_mo 2   &kp BSPC   &trans   &trans     &kp DOT
             >;
 
             display-name = "1 2 3";
@@ -281,10 +287,10 @@
 
         Win_Sym2 {
             bindings = <
-&trans  &kp PLUS   &kp AMPS  &kp ASTRK          &kp LPAR         &kp RPAR   &none   &none      &none       &none     &none     &trans
-&trans  &kp LBRC   &kp DLLR  &kp PRCNT          &kp CARET        &kp RBRC   &none   &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
-&trans  &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp NON_US_HASH  &kp PIPE2  &none   &none      &none       &none     &none     &trans
-                             &trans             &trans           &trans     &trans  &trans     &kp TILDE2
+&trans  &kp AMPS  &kp ASTRK          &kp LPAR         &kp RPAR   &kp PLUS   &none   &none      &none       &none     &none     &trans
+&trans  &kp DLLR  &kp PRCNT          &kp CARET        &kp LBRC   &kp RBRC   &none   &kp LSHFT  &kp LCTRL   &kp LALT  &kp LGUI  &trans
+&trans  &kp EXCL  &kp DOUBLE_QUOTES  &kp NON_US_HASH  &kp PIPE2  &kp UNDER  &none   &none      &none       &none     &none     &trans
+                  &trans             &trans           &trans     &trans  &trans     &kp TILDE2
             >;
         };
 
