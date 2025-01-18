@@ -130,12 +130,33 @@
             keep-mods = <(MOD_LSFT)>;
         };
 
-        three_hash: three_shift_hash {
+        // The following mod-morphs only fire on right-shift, which is
+        // also smart_shft. A left-shift will use the natural key value
+        // Windows GB tap: N3 | rshift-tap: '#' | lshift-tap: LS(N3) = '£'
+        w3_hash: three_shift_hash_win {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp N3>, <&kp NON_US_HASH>;
 
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        // Mac GB tap: N3 | rshift-tap: '#' | lshift-tap: LS(N3) = '£'
+        m3_hash: three_shift_hash_mac {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp LA(N3)>;
+
+            mods = <(MOD_RSFT)>;
+        };
+
+        // Windows GB tap: N2 | rshift-tap: '@' | lshift-tap: RS(N2) = '"'
+        w2_at: two_shift_at_win {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp DQT>;
+
+            mods = <(MOD_RSFT)>;
         };
 
         hmr: hmr {
@@ -196,7 +217,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <4>;
-            continue-list = <BSPC DEL DOT MINUS PLUS>;
+            continue-list = <BSPC DEL DOT MINUS PLUS SQT UNDER>;
             ignore-numbers;
         };
 
@@ -222,7 +243,7 @@
             compatible = "zmk,behavior-caps-word";
             #binding-cells = <0>;
             layers = <10>;
-            continue-list = <BSPC DEL DOT MINUS PLUS>;
+            continue-list = <BSPC DEL DOT MINUS PLUS SQT UNDER>;
             ignore-numbers;
         };
 
@@ -284,10 +305,10 @@
 
         win_num {
             bindings = <
-&trans    &none     &none     &none       &kp ESCAPE  &kp LS(N2)  &kp EQUAL  &kp N7   &kp N8   &kp N9       &kp N0    &trans
-&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &kp SQT     &kp LBKT   &kp N4   &kp N5   &kp N6       &kp RBKT  &trans
-&trans    &none     &kp DOT   &none       &none       &kp GRAVE   &kp MINUS  &kp N1   &kp N2   &three_hash  &kp NUBS  &trans
-                              &trans      &trans      &trans      &kp BSPC   &kp DEL  &kp DOT
+&trans    &none     &none     &none       &kp ESCAPE  &none    &kp EQUAL  &kp N7   &kp N8   &kp N9    &kp N0     &trans
+&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &none    &kp PLUS   &kp N4   &kp N5   &kp N6    &kp ASTRK  &trans
+&trans    &none     &none     &none       &none       &none    &kp MINUS  &kp N1   &w2_at   &w3_hash  &kp SLASH  &trans
+                              &trans      &trans      &trans   &kp BSPC   &kp DEL  &kp DOT
             >;
 
             display-name = "1 2 3";
@@ -306,7 +327,7 @@
             bindings = <
 &trans  &win_bt 0     &mac_bt 1     &mac_bt 2      &win_bt 3      &mac_bt 4      &bt BT_CLR   &kp F7  &kp F8  &kp F9  &kp F10  &trans
 &trans  &kp LGUI      &kp LALT      &kp LCTRL      &kp LSHFT      &sys_reset     &sys_reset   &kp F4  &kp F5  &kp F6  &kp F11  &trans
-&trans  &to 0         &to 1         &to 7          &to 8          &bootloader    &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+&trans  &to 0         &to 7         &to 1          &to 8          &bootloader    &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &trans
                                     &trans         &trans         &trans         &trans       &trans  &trans
             >;
 
@@ -315,10 +336,10 @@
 
         mac_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T         &kp Y        &kp U             &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G         &kp H        &hmr RSHFT J      &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B         &kp N        &kp M             &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &lt 10 TAB    &mo 9         &lt 11 SPACE  &smart_shft  &smart_numm 11 0  &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R         &kp T         &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G         &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V         &kp B         &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &kp TAB       &mo 9         &lt 11 SPACE  &smart_shft  &sl 10        &kp ENTER
             >;
 
             display-name = "Mac";
@@ -349,19 +370,19 @@
         mac_SYM {
             display-name = "SyMac";
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp PLUS   &kp AMPS  &kp ASTRK   &kp LPAR    &kp RPAR  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LBRC   &kp DLLR  &kp PRCNT   &kp CARET   &kp RBRC  &trans
-&trans  &none     &none     &none      &none      &none     &kp UNDER  &kp EXCL  &kp LS(N2)  &kp LA(N3)  &kp PIPE  &trans
-                            &trans     &trans     &trans    &trans     &trans    &kp TILDE
+&trans  &kp LS(N2)  &kp DQT    &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
+&trans  &kp TILDE   &kp SQT    &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp PIPE    &kp GRAVE  &kp LPAR  &kp RPAR  &kp BSLH     &none   &none      &none      &none     &none  &trans
+                            &trans     &trans     &trans    &trans     &trans      &trans
             >;
         };
 
         mac_num {
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp EQUAL  &kp N7  &kp N8   &kp N9  &kp N0    &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp LBKT   &kp N4  &kp N5   &kp N6  &kp RBKT  &trans
-&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1  &kp N2   &kp N3  &kp BSLH  &trans
-                            &trans     &clr_mo 9  &trans    &kp BSPC   &trans  &kp DOT
+&trans  &none     &none     &none      &kp ESC    &none     &kp EQUAL  &kp N7   &kp N8   &kp N9    &kp N0     &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4   &kp N5   &kp N6    &kp ASTRK  &trans
+&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &m3_hash  &kp BSLH   &trans
+                            &trans     &clr_mo 9  &trans    &kp BSPC   &kp DEL  &kp DOT
             >;
 
             display-name = "0 1 2";
@@ -369,10 +390,10 @@
 
         mac_fun {
             bindings = <
-&trans  &win_bt 0     &mac_bt 1     &mac_bt 2      &win_bt 3      &mac_bt 4      &bt BT_CLR   &trans         &to 7          &to 8         &to 0          &trans
-&trans  &hml LGUI F1  &hml LALT F2  &hml LCTRL F3  &hml LSHFT F4  &kp F5         &kp F6       &hmr RSHFT F7  &hmr RCTRL F8  &hmr LALT F8  &hmr LGUI F10  &trans
-&trans  &kp F11       &bt BT_PRV    &bt BT_NXT     &sys_reset     &bootloader    &bootloader  &sys_reset     &trans         &trans        &kp F12        &trans
-                                    &trans         &trans         &trans         &trans       &trans         &trans
+&trans  &win_bt 0     &mac_bt 1     &mac_bt 2      &win_bt 3      &mac_bt 4      &bt BT_CLR   &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &kp LGUI      &kp LALT      &kp LCTRL      &kp LSHFT      &sys_reset     &sys_reset   &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans  &to 0         &to 7         &to 1          &to 8          &bootloader    &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                                    &trans         &trans         &trans         &trans       &trans  &trans
             >;
 
             display-name = "FunKy";
