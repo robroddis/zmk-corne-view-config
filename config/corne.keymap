@@ -130,6 +130,14 @@
             keep-mods = <(MOD_LSFT)>;
         };
 
+        three_hash: three_shift_hash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp NON_US_HASH>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&kp>, <&kp>;
@@ -233,10 +241,10 @@
 
         win_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U            &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J     &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M            &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &lt 5 TAB     &mo 2    &lt 4 SPACE      &smart_shft  &sl 3        &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &lt 5 TAB     &mo 2         &lt 4 SPACE    &smart_shft  &sl 3         &kp ENTER
             >;
 
             display-name = "Win";
@@ -276,9 +284,9 @@
 
         win_num {
             bindings = <
-&trans    &none     &none     &none       &kp ESCAPE  &kp LS(N2)  &kp EQUAL  &kp N7   &kp N8   &kp N9     &kp N0         &trans
-&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &kp SQT     &kp LBKT   &kp N4   &kp N5   &kp N6     &kp RBKT       &trans
-&trans    &none     &kp DOT   &none       &none       &kp GRAVE   &kp MINUS  &kp N1   &kp N2   &kp N3     &kp NUBS       &trans
+&trans    &none     &none     &none       &kp ESCAPE  &kp LS(N2)  &kp EQUAL  &kp N7   &kp N8   &kp N9       &kp N0    &trans
+&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &kp SQT     &kp LBKT   &kp N4   &kp N5   &kp N6       &kp RBKT  &trans
+&trans    &none     &kp DOT   &none       &none       &kp GRAVE   &kp MINUS  &kp N1   &kp N2   &three_hash  &kp NUBS  &trans
                               &trans      &trans      &trans      &kp BSPC   &kp DEL  &kp DOT
             >;
 
@@ -287,19 +295,19 @@
 
         Win_Sym2 {
             bindings = <
-&trans  &none     &none       &none      &kp ESCAPE  &none   &kp PLUS   &kp AMPS  &kp ASTRK          &kp LPAR         &kp RPAR   &trans
-&trans  &kp LGUI  &kp LALT    &kp LCTRL  &kp LSHFT   &none   &kp LBRC   &kp DLLR  &kp PRCNT          &kp CARET        &kp LBRC   &trans
-&trans  &none     &kp DOT     &none      &none       &none   &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp NON_US_HASH  &kp PIPE2  &trans
+&trans  &none     &none       &none      &kp ESCAPE  &none   &kp PLUS   &kp AMPS  &kp ASTRK          &kp LPAR    &kp RPAR   &trans
+&trans  &kp LGUI  &kp LALT    &kp LCTRL  &kp LSHFT   &none   &kp LBRC   &kp DLLR  &kp PRCNT          &kp CARET   &kp LBRC   &trans
+&trans  &none     &kp DOT     &none      &none       &none   &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp LS(N3)  &kp PIPE2  &trans
                               &trans     &trans      &trans  &trans     &trans    &kp TILDE2
             >;
         };
 
         win_fun {
             bindings = <
-&trans  &win_bt 0     &mac_bt 1     &mac_bt 2      &win_bt 3      &mac_bt 4      &bt BT_CLR   &trans         &to 0          &to 1         &to 7          &trans
-&trans  &hml LGUI F1  &hml LALT F2  &hml LCTRL F3  &hml LSHFT F4  &kp F5         &kp F6       &hmr RSHFT F7  &hmr RCTRL F8  &hmr LALT F8  &hmr LGUI F10  &trans
-&trans  &kp F11       &bt BT_PRV    &bt BT_NXT     &sys_reset     &bootloader    &bootloader  &sys_reset     &none          &none         &kp F12        &trans
-                                    &trans         &trans         &trans         &trans       &trans         &trans
+&trans  &win_bt 0     &mac_bt 1     &mac_bt 2      &win_bt 3      &mac_bt 4      &bt BT_CLR   &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &kp LGUI      &kp LALT      &kp LCTRL      &kp LSHFT      &sys_reset     &sys_reset   &kp F4  &kp F5  &kp F6  &kp F11  &trans
+&trans  &to 0         &to 1         &to 7          &to 8          &bootloader    &bootloader  &kp F1  &kp F2  &kp F3  &kp F12  &trans
+                                    &trans         &trans         &trans         &trans       &trans  &trans
             >;
 
             display-name = "Fun !!";
