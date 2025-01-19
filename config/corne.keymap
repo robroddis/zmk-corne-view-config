@@ -262,10 +262,10 @@
 
         win_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T          &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G          &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B          &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &lt 5 TAB     &mo 2         &lt 4 SPACE    &smart_shft  &sl 3         &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R            &kp T        &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F     &kp G        &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V            &kp B        &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &lt 5 TAB     &smart_numw 4 0  &lt 2 SPACE  &smart_shft  &sl 3         &kp ENTER
             >;
 
             display-name = "Win";
@@ -296,18 +296,18 @@
         Win_SYM {
             display-name = "< $ym >";
             bindings = <
-&trans  &kp DQT     &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
-&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
-&trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NUBS     &none   &none      &none      &none     &none  &trans
-                                &trans    &trans    &trans       &trans  &trans     &trans
+&trans  &kp DQT     &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER        &none   &none      &none      &none     &none  &trans
+&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH        &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NON_US_HASH  &none   &none      &none      &none     &none  &trans
+                                &trans    &trans    &trans           &trans  &trans     &trans
             >;
         };
 
         win_num {
             bindings = <
-&trans    &none     &none     &none       &kp ESCAPE  &none    &kp EQUAL  &kp N7   &kp N8   &kp N9    &kp N0     &trans
-&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &none    &kp PLUS   &kp N4   &kp N5   &kp N6    &kp ASTRK  &trans
-&trans    &none     &none     &none       &none       &none    &kp MINUS  &kp N1   &w2_at   &w3_hash  &kp SLASH  &trans
+&trans    &none     &none     &none       &kp ESCAPE  &none    &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
+&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &none    &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
+&trans    &none     &none     &none       &none       &none    &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
                               &trans      &trans      &trans   &kp BSPC   &kp DEL  &kp DOT
             >;
 
@@ -336,10 +336,10 @@
 
         mac_base {
             bindings = <
-&trans  &kp Q        &kp W        &kp E         &kp R         &kp T         &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
-&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G         &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
-&trans  &kp Z        &kp X        &kp C         &kp V         &kp B         &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
-                                  &kp TAB       &mo 9         &lt 11 SPACE  &smart_shft  &sl 10        &kp ENTER
+&trans  &kp Q        &kp W        &kp E         &kp R              &kp T         &kp Y        &kp U         &kp I         &kp O        &kp P           &trans
+&trans  &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F       &kp G         &kp H        &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr LGUI SEMI  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V              &kp B         &kp N        &kp M         &kp COMMA     &kp DOT      &kp FSLH        &trans
+                                  &kp TAB       &smart_numm 11 0   &lt 9 SPACE   &smart_shft  &sl 10        &kp ENTER
             >;
 
             display-name = "Mac";
@@ -370,18 +370,18 @@
         mac_SYM {
             display-name = "SyMac";
             bindings = <
-&trans  &kp LS(N2)  &kp DQT    &kp LBKT  &kp RBKT  &kp UNDER    &none   &none      &none      &none     &none  &trans
-&trans  &kp TILDE   &kp SQT    &kp LBRC  &kp RBRC  &kp SLASH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
-&trans  &kp PIPE    &kp GRAVE  &kp LPAR  &kp RPAR  &kp BSLH     &none   &none      &none      &none     &none  &trans
-                            &trans     &trans     &trans    &trans     &trans      &trans
+&trans  &kp LS(N2)  &kp DQT    &kp LBKT  &kp RBKT  &kp UNDER   &none   &none      &none      &none     &none  &trans
+&trans  &kp TILDE   &kp SQT    &kp LBRC  &kp RBRC  &kp SLASH   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp PIPE    &kp GRAVE  &kp LPAR  &kp RPAR  &kp LA(N3)  &none   &none      &none      &none     &none  &trans
+                            &trans     &trans     &trans       &trans  &trans     &trans
             >;
         };
 
         mac_num {
             bindings = <
-&trans  &none     &none     &none      &kp ESC    &none     &kp EQUAL  &kp N7   &kp N8   &kp N9    &kp N0     &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4   &kp N5   &kp N6    &kp ASTRK  &trans
-&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &m3_hash  &kp BSLH   &trans
+&trans  &none     &none     &none      &kp ESC    &none     &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
+&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &kp N3  &kp BSLH   &trans
                             &trans     &clr_mo 9  &trans    &kp BSPC   &kp DEL  &kp DOT
             >;
 
