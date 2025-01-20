@@ -297,7 +297,7 @@
             display-name = "< $ym >";
             bindings = <
 &trans  &kp DQT     &kp LS(N2)  &kp LBKT  &kp RBKT  &kp UNDER        &none   &none      &none      &none     &none  &trans
-&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp SLASH        &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp TILDE2  &kp SQT     &kp LBRC  &kp RBRC  &kp NUBS         &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
 &trans  &kp PIPE2   &kp GRAVE   &kp LPAR  &kp RPAR  &kp NON_US_HASH  &none   &none      &none      &none     &none  &trans
                                 &trans    &trans    &trans           &trans  &trans     &trans
             >;
@@ -371,7 +371,7 @@
             display-name = "SyMac";
             bindings = <
 &trans  &kp LS(N2)  &kp DQT    &kp LBKT  &kp RBKT  &kp UNDER   &none   &none      &none      &none     &none  &trans
-&trans  &kp TILDE   &kp SQT    &kp LBRC  &kp RBRC  &kp SLASH   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
+&trans  &kp TILDE   &kp SQT    &kp LBRC  &kp RBRC  &kp BSLH    &none   &kp RSHFT  &kp RCTRL  &kp RALT  &none  &trans
 &trans  &kp PIPE    &kp GRAVE  &kp LPAR  &kp RPAR  &kp LA(N3)  &none   &none      &none      &none     &none  &trans
                             &trans     &trans     &trans       &trans  &trans     &trans
             >;
@@ -381,7 +381,7 @@
             bindings = <
 &trans  &none     &none     &none      &kp ESC    &none     &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
 &trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
-&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &kp N3  &kp BSLH   &trans
+&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
                             &trans     &clr_mo 9  &trans    &kp BSPC   &kp DEL  &kp DOT
             >;
 
