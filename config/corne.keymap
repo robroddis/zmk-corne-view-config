@@ -255,6 +255,22 @@
             ignored-key-positions = <2 4 7 8 9 13 14 15 16 19 20 21 39 40 41>;
             ignored-layers = <12>;
         };
+
+        // Special case for the number layer, this issues a cancel before pressing
+        // momentary layer to ensure that any sticky num layer is cleared before
+        // activating the given layer.
+        // This prevents activating the function layer when a sticky number layer is in
+        // effect when selecting an arrow key and firing a function key by mistake.
+
+        clr_lt: clr_lt {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&clr_mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -305,10 +321,12 @@
 
         win_num {
             bindings = <
-&trans    &none     &none     &none       &kp ESCAPE  &none    &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
-&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &none    &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
-&trans    &none     &none     &none       &none       &none    &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
-                              &trans      &trans      &trans   &kp BSPC   &kp DEL  &kp DOT
+&trans    &none     &none     &none       &kp ESCAPE  &none            &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
+&trans    &kp LGUI  &kp LALT  &kp LCTRL   &kp LSHFT   &none            &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
+&trans    &none     &none     &none       &none       &none            &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
+// Disable bspc and del until I stop using the num key for the nav functions
+//                            &trans      &trans      &clr_lt 2 SPACE  &kp BSPC   &kp DEL  &kp DOT
+                              &trans      &trans      &clr_lt 2 SPACE  &none      &none    &kp DOT
             >;
 
             display-name = "1 2 3";
@@ -379,10 +397,12 @@
 
         mac_num {
             bindings = <
-&trans  &none     &none     &none      &kp ESC    &none     &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
-&trans  &none     &none     &none      &none      &none     &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
-                            &trans     &clr_mo 9  &trans    &kp BSPC   &kp DEL  &kp DOT
+&trans  &none     &none     &none      &kp ESC    &none            &kp EQUAL  &kp N7   &kp N8   &kp N9  &kp N0     &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none            &kp PLUS   &kp N4   &kp N5   &kp N6  &kp ASTRK  &trans
+&trans  &none     &none     &none      &none      &none            &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
+// Disable bspc and del until I stop using the num key for the nav functions
+//                          &trans     &trans     &clr_lt 9 SPACE  &kp BSPC   &kp DEL  &kp DOT
+                            &trans     &trans     &clr_lt 9 SPACE  &none      &none    &kp DOT
             >;
 
             display-name = "0 1 2";
