@@ -339,6 +339,8 @@
 &trans  &none     &kp DOT     &none      &none       &none   &kp UNDER  &kp EXCL  &kp DOUBLE_QUOTES  &kp LS(N3)  &kp PIPE2  &trans
                               &trans     &trans      &trans  &trans     &trans    &kp TILDE2
             >;
+
+            display-name = "wSym2";
         };
 
         win_fun {
