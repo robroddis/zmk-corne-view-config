@@ -326,7 +326,7 @@
 &trans    &none     &none     &none       &none       &none            &kp MINUS  &kp N1   &kp N2   &kp N3  &kp SLASH  &trans
 // Disable bspc and del until I stop using the num key for the nav functions
 //                            &trans      &trans      &clr_lt 2 SPACE  &kp BSPC   &kp DEL  &kp DOT
-                              &trans      &trans      &clr_lt 2 SPACE  &none      &none    &kp DOT
+                              &trans      &trans      &clr_lt 2 SPACE  &trans     &trans   &kp DOT
             >;
 
             display-name = "1 2 3";
