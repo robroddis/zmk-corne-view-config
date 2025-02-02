@@ -289,10 +289,15 @@
 
         win_colemak {
             bindings = <
-&trans  &kp Q        &kp W        &kp F         &kp P         &kp B        &kp J  &kp L            &kp U         &kp Y        &kp SEMI     &trans
-&trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G        &kp M  &hmr RSHFT N     &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
-&trans  &kp Z        &kp X        &kp C         &kp D         &kp V        &kp K  &kp H            &kp COMMA     &kp DOT      &smart_shft  &trans
-                                  &kp TAB       &mo 2         &kp SPACE    &sl 3  &smart_numw 4 0  &kp ENTER
+// Colemak-DH
+// &trans  &kp Q        &kp W        &kp F         &kp P            &kp B        &kp J        &kp L         &kp U         &kp Y        &kp SEMI     &trans
+// &trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T     &kp G        &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
+// &trans  &kp Z        &kp X        &kp C         &kp D            &kp V        &kp K        &kp H         &kp COMMA     &kp DOT      &kp FSLH     &trans
+// Colemak
+&trans  &kp Q        &kp W        &kp F         &kp P            &kp G        &kp J        &kp L         &kp U         &kp Y        &kp SEMI     &trans
+&trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T     &kp D        &kp H        &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V            &kp B        &kp K        &kp M         &kp COMMA     &kp DOT      &kp FSLH     &trans
+                                  &lt 5 TAB     &smart_numw 4 0  &lt 2 SPACE  &smart_shft  &sl 3         &kp ENTER
             >;
 
             display-name = "CoMak";
@@ -367,10 +372,15 @@
 
         mac_colemak {
             bindings = <
-&trans  &kp Q        &kp W        &kp F         &kp P         &kp B        &kp J   &kp L             &kp U         &kp Y        &kp SEMI     &trans
-&trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G        &kp M   &hmr RSHFT N      &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
-&trans  &kp Z        &kp X        &kp C         &kp D         &kp V        &kp K   &kp H             &kp COMMA     &kp DOT      &smart_shft  &trans
-                                  &kp TAB       &mo 9         &kp SPACE    &sl 10  &smart_numm 11 0  &kp ENTER
+// Colemak-DH
+// &trans  &kp Q        &kp W        &kp F         &kp P             &kp B         &kp J        &kp L         &kp U         &kp Y        &kp SEMI     &trans
+// &trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T      &kp G         &kp M        &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
+// &trans  &kp Z        &kp X        &kp C         &kp D             &kp V         &kp K        &kp H         &kp COMMA     &kp DOT      &kp FSLH     &trans
+// Colemak
+&trans  &kp Q        &kp W        &kp F         &kp P             &kp G         &kp J        &kp L         &kp U         &kp Y        &kp SEMI     &trans
+&trans  &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T      &kp D         &kp H        &hmr RSHFT N  &hmr RCTRL E  &hmr LALT I  &hmr LGUI O  &trans
+&trans  &kp Z        &kp X        &kp C         &kp V             &kp B         &kp K        &kp M         &kp COMMA     &kp DOT      &kp FSLH     &trans
+                                  &kp TAB       &smart_numm 11 0  &lt 9 SPACE   &smart_shft  &sl 10        &kp ENTER
             >;
 
             display-name = "CoMac";
